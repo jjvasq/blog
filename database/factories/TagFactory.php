@@ -16,11 +16,11 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->word(20);
+        $name = $this->faker->unique()->word(20);
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'color' => $this->faker->randomElement(['green', 'blue', 'yellow', 'purple', 'red', 'gray', 'brown']),
+            'color' => $this->faker->randomElement(['red', 'yellow', 'green', 'blue', 'red', 'indigo', 'purple', 'pink']),
         ];
     }
 }
