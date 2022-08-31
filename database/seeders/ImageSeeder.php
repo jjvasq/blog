@@ -19,7 +19,7 @@ class ImageSeeder extends Seeder
         for($i=1; $i<=30; $i++){
             Image::create([
                 'url' => 'posts/'.$i.'.png',
-                'imageable_id' => $i%4,
+                'imageable_id' => $i,
                 'imageable_type' => Post::class,
             ]);
         }
