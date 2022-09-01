@@ -5,7 +5,7 @@
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button x-on:click="open = true" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
 
-            <span class="mr-2">Menú Principal</span>
+            <span class="mr-2">Menú</span>
             
             <!--
                 Icon when menu is closed.
@@ -45,7 +45,7 @@
                     <!-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a> -->
 
                     @foreach ($categories as $category)
-                        <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>    
+                        <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>    
                     @endforeach
                     
 
@@ -110,7 +110,7 @@
 
       
         @foreach ($categories as $category)
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{$category->name}}</a>
+            <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{$category->name}}</a>
         @endforeach
     </div>
   </div>
