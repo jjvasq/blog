@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 /**
  * Controlador princpal de Posts
@@ -39,5 +40,15 @@ class PostController extends Controller
                         ->paginate(3);
 
         return view('posts.category', compact('posts', 'category'));
+    }
+
+    public function tag(Tag $tag){
+        /* $posts = Post::where('tag_id', $tag->id)
+                        ->where('status', 2)
+                        ->latest('id')
+                        ->paginate(3);
+        return view('posts.tag', compact('posts')); */
+        $posts = $tag->posts()->where('status', 2)->latest('id')->paginate(3);
+        return view('posts.tag', compact('posts', 'tag'));
     }
 }

@@ -8,7 +8,7 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {{-- Contenido Principal --}}
-            <div class="col-span-2">
+            <div class="lg:col-span-2">
                 <figure>
                     <img class="w-full h-80 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="Una imagen del post">
                 </figure>
