@@ -36,8 +36,8 @@
                             <td>{{$category->name}}</td>
                             <td width="10px">
                                 <a class="btn btn-primary btn-sm" href="{{route('admin.categories.edit', $category)}}">Editar</a>
-                            </td width="10px">
-                            <td>
+                            </td>
+                            <td width="10px">
                                 <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
                                     @csrf
                                     @method('delete')
