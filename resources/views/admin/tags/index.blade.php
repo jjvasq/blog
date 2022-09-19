@@ -10,7 +10,11 @@
 @stop
 
 @section('content')
-
+    @if (session('info'))
+        <div class="alert alert-success">
+            <strong>{{session('info')}}</strong>
+        </div>
+    @endif
     <div class="card">
         <div class="card-body">
             <table class="table table-striped">

@@ -11,6 +11,12 @@ class Tag extends Model
     protected $fillable = ['name', 'slug', 'color'];
 
     //Relación muchos a muchos.
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     public function posts(){
         return $this->belongsToMany(Post::class);
     }
