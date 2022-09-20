@@ -28,8 +28,8 @@
                     @foreach ($similares as $similar)
                         <li class="mb-4">
                             <a class="flex" href="{{route('posts.show', $similar)}}">
-                                @if ($post->image)
-                                    <img class="w-36 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="Una imagen del post">
+                                @if ($similar->image)
+                                    <img class="w-36 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="Una imagen del post">
                                 @else
                                     <img class="w-36 object-cover object-center" src="https://cdn.pixabay.com/photo/2021/09/05/16/48/rapeseed-6599950__340.jpg" alt="Una imagen del post">
                                 @endif
