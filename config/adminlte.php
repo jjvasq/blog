@@ -331,59 +331,19 @@ return [
             'icon' => 'fas fa-fw fa-bookmark',
             'active' =>['admin/tags*'],
         ],
+
+        ['header' => 'OPCIONES DE BLOG'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
+            'text'       => 'Lista de Posts:',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'route'        => 'admin.posts.index',
+            'icon'         => 'fas fa-fw fa-clipboard',
+        ],
+        [
+            'text'       => 'Crear Nuevo Post',
+            'icon_color' => 'green',
+            'route'        => 'admin.posts.create',
+            'icon'         => 'fas fa-fw fa-file',
         ],
     ],
 
@@ -539,5 +499,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

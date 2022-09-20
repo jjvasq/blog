@@ -9,6 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     //Relacion uno a muchos inversa Post-Usuario.
     public function user(){
         return $this->belongsTo(User::class);

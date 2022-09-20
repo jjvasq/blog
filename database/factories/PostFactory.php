@@ -27,7 +27,7 @@ class PostFactory extends Factory
             'body' => $this->faker->text(2000),
             'status' => $this->faker->randomElement([1, 2]),
             'category_id' => Category::all()->random()->id,
-            'user_id' => User::all()->random()->id,
+            'user_id' => $this->faker->randomElement([1, 3]),
         ];
     }
 }
