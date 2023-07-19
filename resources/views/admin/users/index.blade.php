@@ -1,57 +1,34 @@
 @extends('adminlte::page')
 
-@section('title', 'Blog Admin')
+@section('title', 'Blog Admin Usuarios')
 
 @section('content_header')
-    <h1>Editar Nuevo Post:</h1>
+    <h4>Listados de Usuarios:</h4>
 @stop
 
 @section('content')
-    @if (session('info'))
-        <div class="alert alert-success">
-            <strong>{{session('info')}}</strong>
-        </div>
-    @endif
-
-    <div class="card">
-        <div class="card-body">
-            {!! Form::model($post,['route' => ['admin.posts.update', $post], 'autocomplete' => 'off', 'files' => true, 'method' => 'put']) !!}
-
-                {{-- {!! Form::hidden('user_id', auth()->user()->id) !!} --}}
-
-                @include('admin.posts.partials.form')
-
-                {!! Form::submit('Actualizar Post', ['class' => 'btn btn-primary']) !!}
-
-            {!! Form::close() !!}
-        </div>
-    </div>
+    @livewire('admin.users-index')
 @stop
 
 @section('css')
-    <style>
-        .image-wrapper{
-            position: relative;
-            padding-bottom: 56.25%;
-        }
-        .image-wrapper img{
-            position: absolute;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
     <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/all.min.css')}}">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 @stop
 
 @section('js')
+    
+   
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
     <script src="{{asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
 
     <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+    
+    {{-- <script src="sweetalert2.all.min.js"></script> --}}
 
     <script>
-        $(document).ready( function() {
+         $('#addPostModal').on('show.bs.modal', event => {
             $("#name").stringToSlug({
                 setEvents: 'keyup keydown blur',
                 getPut: '#slug',
@@ -88,4 +65,24 @@
 
     </script>
 
-@endsection
+    {{-- Alertas de Sweetalert --}}
+    <script>
+        Livewire.on('alert', function(message){
+            Swal.fire(
+                'Good job!',
+                'VAmos Carajo!',
+                'success'
+            )
+        })
+    </script>
+    
+    <script>
+        window.addEventListener('close-modal-show', event =>{
+            $('#detallePost').modal('hide');
+        });
+        
+        window.addEventListener('open-modal-show', event =>{
+            $('#detallePost').modal('show');
+        });
+    </script>
+@stop
