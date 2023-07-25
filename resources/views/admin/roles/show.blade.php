@@ -3,12 +3,7 @@
 @section('title', 'Blog Admin')
 
 @section('content_header')
-
-    @can('admin.posts.create')
-        <a class="btn btn-secondary btn-sm float-right" href="{{route('admin.posts.create')}}">Nuevo Post</a>    
-    @endcan
-
-    <h1>Listado de Posts</h1>
+    <h1>Mostrar Rol</h1>
 @stop
 
 @section('content')
@@ -17,7 +12,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    @livewire('admin.posts-index')
+    {{-- @livewire('admin.posts-index') --}}
 @stop
 
 @section('css')

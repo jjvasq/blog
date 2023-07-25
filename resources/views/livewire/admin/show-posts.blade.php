@@ -8,10 +8,13 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-                <a class="ml-3 btn btn-primary btn-sm" href="{{route('admin.posts.create')}}">
-                    Crear Nuevo Post
-                    <i class="ml-1 fas fa-star"></i>
-                </a>
+                @can('admin.posts.create')
+                    <a class="ml-3 btn btn-primary btn-sm" href="{{route('admin.posts.create')}}">
+                        Crear Nuevo Post
+                        <i class="ml-1 fas fa-star"></i>
+                    </a>
+                @endcan
+                
                 {{-- <button type="button" class="ml-3 btn btn-primary btn-sm" >
                     Crear Nuevo Post
                     <i class="ml-1 fas fa-star"></i>
